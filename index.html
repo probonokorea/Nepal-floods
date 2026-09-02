@@ -21,18 +21,30 @@
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
-  body{
+ body {
+    /* 기존 폰트 및 세팅 유지 */
     font-family: var(--font);
-    background:var(--black);
-    color:var(--white);
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  img{max-width:100%; display:block;}
-  a{color:inherit; text-decoration:none;}
-  button{font-family:inherit; cursor:pointer; border:none;}
-  .wrap{max-width:640px; margin:0 auto; position:relative;}
+    background-color: #050505; /* PC 뷰 좌우 여백의 어두운 배경색 지정 */
+    color: var(--white);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+.wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+    background-color: var(--black); /* 실제 콘텐츠 영역의 배경색 */
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8); /* PC 화면에서 콘텐츠 영역을 돋보이게 하는 그림자 효과 추가 */
+}
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* 화질 저하 및 비율 왜곡 방지 */
+    display: block;
+}
 
   /* ---------- reveal on scroll ---------- */
   .reveal{opacity:0; transform:translateY(28px); transition:opacity .8s cubic-bezier(.2,.7,.3,1), transform .8s cubic-bezier(.2,.7,.3,1);}
