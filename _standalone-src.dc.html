@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#0a0a0a">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0a0a0a"/>
+    <path d="M0 620 L300 380 L500 560 L760 300 L1000 520 L1200 400 L1200 800 L0 800 Z" fill="#1c1c1c"/>
+    <rect x="120" y="150" width="380" height="26" rx="13" fill="#e11d2e"/>
+    <rect x="120" y="212" width="700" height="46" rx="10" fill="#f2f2f2"/>
+    <rect x="120" y="282" width="520" height="46" rx="10" fill="#f2f2f2"/>
+    <rect x="120" y="392" width="420" height="72" rx="8" fill="#e11d2e"/>
+  </svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<style>
+  :root{
+    --red:#e11d2e;
+    --red-dark:#b8121f;
+    --black:#0a0a0a;
+    --near-black:#141414;
+    --card-black:#1c1c1c;
+    --grey-txt:#9a9a9a;
+    --navy:#3d4269;
+    --navy-dark:#2c3050;
+    --cream:#faf7f2;
+    --cream2:#f3ece3;
+    --white:#ffffff;
+    --secpad:64px;
+    --font:"Pretendard Variable","Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Malgun Gothic",sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; font-family:var(--font); background:var(--navy-dark); color:var(--white); line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  a:hover{color:inherit;}
+  p,h1,h2{margin:0;}
+  ::selection{background:var(--red); color:#fff;}
+  @keyframes heroZoom{from{transform:scale(1.08);} to{transform:scale(1);}}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(225,29,46,.55);}
+    70%{box-shadow:0 0 0 8px rgba(225,29,46,0);}
+    100%{box-shadow:0 0 0 0 rgba(225,29,46,0);}
+  }
+  @keyframes scrollDot{0%{opacity:1; top:6px;} 100%{opacity:0; top:16px;}}
+</style>
+</helmet>
+
+<div style="background:var(--navy-dark); color:var(--white); font-family:var(--font); line-height:1.55; overflow-x:hidden;">
+
+  <section style="position:relative; min-height:100vh; display:flex; flex-direction:column; justify-content:space-between; background:#000;">
+    <div style="position:absolute; inset:0; overflow:hidden; background:#111;">
+      <img src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202608/27/ab5e2d21-d375-495f-b0da-f7bda67f6855.jpg" alt="네팔 산사태 피해 항공 사진" style="width:100%; height:100%; object-fit:cover; object-position:center 30%; animation:heroZoom 16s ease-out forwards;">
+      <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.15) 35%, rgba(0,0,0,.55) 68%, rgba(0,0,0,.97) 100%);"></div>
+    </div>
+    <div style="position:relative; z-index:2; width:100%; max-width:640px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:22px 20px; font-size:12px; letter-spacing:.08em; color:#f2f2f2;">
+      <span style="display: flex; align-items: center; gap: 8px; font-weight: 600;"><span style="width: 7px; height: 7px; border-radius: 50%; background: var(--red); box-shadow: rgba(225, 29, 46, 0.6) 0px 0px 0px 0px; animation: 2s ease 0s infinite normal none running pulse;"></span>NEPAL EMERGENCY RELIEF<br>2026.09.21 기준<br></span><span style="">공동주관: <span style="letter-spacing: 0.96px;">글로벌호프</span>,&nbsp;<span style="letter-spacing: 0.96px;">월드케어</span>,&nbsp;<span style="letter-spacing: 0.96px;">프로보노국재협력재단</span></span>
+      
+    </div>
+    <div data-reveal="1" style="position:relative; z-index:2; width:100%; max-width:640px; margin:0 auto; padding:0 20px 44px;">
+      <p style="color: var(--red); font-weight: 700; font-size: 20px; margin-bottom: 10px">기후 재난대응 모금캠페인</p>
+      <h1 style="font-size:46px; font-weight:800; line-height:1.18; letter-spacing:-.02em; margin-bottom:18px;">네팔의 <font color="#e11d2e">일상을&nbsp;</font>이어주세요.</h1>
+      <p style="font-size: 16px; color: #e6e6e6; margin-bottom: 26px; max-width: 480px; width: 543px; height: 50px">또 다른 위기대응의 시작, 기후변화로 빙하홍수 피해를 입은 네팔에 구호 모금 및 2차 대응 캠페인을 진행합니다.&nbsp;</p>
+      <a href="#donate" style="display:block; width:100%; max-width:520px; text-align:center; padding:19px 24px; font-size:17px; font-weight:700; border-radius:6px; letter-spacing:-.2px; background:var(--red); color:#fff; transition:transform .25s cubic-bezier(.2,.8,.3,1), box-shadow .25s ease;" style-hover="transform:translateY(-2px); box-shadow:0 10px 28px rgba(225,29,46,.45);">지금 재난대응에 후원하기</a>
+    </div>
+    <div style="position:absolute; bottom:14px; left:50%; transform:translateX(-50%); z-index:2; width:20px; height:32px; border:2px solid rgba(255,255,255,.5); border-radius:12px;">
+      <div style="position:absolute; top:6px; left:50%; width:3px; height:6px; background:#fff; border-radius:2px; transform:translateX(-50%); animation:scrollDot 1.6s infinite;"></div>
+    </div>
+  </section>
+
+  <section style="background:var(--black); padding:var(--secpad) 20px;">
+    <div style="width:100%; max-width:640px; margin:0 auto; position:relative;">
+      <p data-reveal="1" style="color:var(--red); font-weight:700; font-size:13px; letter-spacing:.02em; margin-bottom:12px;">CRISIS</p>
+      <h2 data-reveal="1" style="font-size:30px; font-weight:800; letter-spacing:-.02em; line-height:1.32; margin-bottom:28px;">'도망쳐!' 외침조차<br>삼켜버린 흙더미</h2>
+
+      <div data-reveal="1" style="border-left:2px solid var(--red); padding-left:20px; margin-bottom:34px;">
+        <p style="font-size:15.5px; color:#d6d6d6; line-height:1.78; margin-bottom:16px;">2026년 8월 26일 아침, 히말라야의 빙하가 무너졌습니다. 얼음과 바위, 흙더미가 강을 타고 마을을 덮쳤습니다. 가족과 걷던 길, 친구들과 공부하던 학교, 이웃을 만나던 시장이 한순간에 사라졌습니다.</p>
+        <p style="font-size:15.5px; color:#efefef; line-height:1.78; font-weight:700;">살아남은 사람들의 시간은 그날에 멈춰 있습니다. 물은 빠졌지만, 길과 다리, 집과 일터는 돌아오지 않았습니다.</p>
+      </div>
+
+      <div data-reveal="1" style="border:1px solid #2a2a2a; border-radius:14px; padding:26px 22px; margin-bottom:16px; background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)); transition:border-color .3s ease, transform .3s ease, background .3s ease;" style-hover="border-color:rgba(225,29,46,.5); transform:translateY(-3px); background:rgba(225,29,46,.04);">
+        <span style="font-size:26px; margin-bottom:14px; display:block;">🏔️</span>
+        <p style="font-size:17px; font-weight:700; margin-bottom:10px;">자연의 역습</p>
+        <p style="font-size:14.5px; color:#c7c7c7; line-height:1.6;">해발 5,000m 빙하 붕괴. 시속 180km 진흙 급류가 덮쳐 대피 시간이 없었습니다.</p>
+      </div>
+
+      <div data-reveal="1" style="border:1px solid #2a2a2a; border-radius:14px; padding:26px 22px; margin-bottom:16px; background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)); transition:border-color .3s ease, transform .3s ease, background .3s ease;" style-hover="border-color:rgba(225,29,46,.5); transform:translateY(-3px); background:rgba(225,29,46,.04);">
+        <span style="font-size:26px; margin-bottom:14px; display:block;">⚠️</span>
+        <p style="font-size:17px; font-weight:700; margin-bottom:10px;">사상 최악의 참사</p>
+        <p style="font-size:14.5px; color:#c7c7c7; line-height:1.6;">홍수 재난으로 인해 1,453명의 사망자와 6,664명의 실종자가 발생했습니다. (9월21일 기준)<br></p>
+      </div>
+
+      <div data-reveal="1" style="border:1px solid #2a2a2a; border-radius:14px; padding:26px 22px; margin-bottom:16px; background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)); transition:border-color .3s ease, transform .3s ease, background .3s ease;" style-hover="border-color:rgba(225,29,46,.5); transform:translateY(-3px); background:rgba(225,29,46,.04);">
+        <span style="font-size:26px; margin-bottom:14px; display:block;">🏚️</span>
+        <p style="font-size:17px; font-weight:700; margin-bottom:10px;">소멸된 삶의 터전</p>
+        <p style="font-size:14.5px; color:#c7c7c7; line-height:1.6;">라수와, 누와코트, 다딩, 고르카, 타나훈, 치트완 지역 국가 재난 위기 선포. <br>이재민들의 모든 생계 기반이 사라졌습니다.</p>
+      </div>
+    </div>
+    <div data-reveal="1" style="background:var(--red); color:#fff; text-align:center; font-weight:700; font-size:14.5px; padding:20px 16px; margin:8px -20px 0; letter-spacing:-.01em;">라수와 · 누와코트 · 다딩&nbsp;<span style="letter-spacing: -0.145px;">·&nbsp;고르카&nbsp;</span><span style="letter-spacing: -0.145px;">·&nbsp;타나훈&nbsp;</span><span style="letter-spacing: -0.145px;">·&nbsp;치트완</span>&nbsp;지역 — 국가 재난 위기 선포 지역</div>
+  </section>
+
+  <section style="background: var(--black); padding: var(--secpad) 20px; height: 197px">
+    <div style="width:100%; max-width:640px; margin:0 auto;">
+      <p data-reveal="1" style="color:var(--red); font-weight:700; font-size:13px; letter-spacing:.02em; margin-bottom:12px;">3 REALITIES</p>
+      <h2 data-reveal="1" style="font-size:30px; font-weight:800; letter-spacing:-.02em; line-height:1.32; margin-bottom:34px;">수해민들이 마주한<br>더 가혹한 3가지 현실</h2>
+    </div>
+  </section>
+
+  
+
+  <div data-reveal="1" style="background-color: #0A0A0A">
+    <div style="width:100%; max-width:640px; margin:0 auto;">
+      <div style="width: 638px; aspect-ratio: 16/10; overflow: hidden; position: relative; background: #161616; height: 215px">
+        <img src="assets/img-1.jpg" alt="무너진 상가와 시장" style="width: 648px; height: 212px; object-fit: cover">
+      </div>
+      <div style="padding:28px 20px 40px; background:var(--black);">
+        <p style="font-size:12px; font-weight:700; color:var(--grey-txt); letter-spacing:.06em; margin-bottom:10px;">REALITY 01</p>
+        <p style="font-size:21px; font-weight:800; line-height:1.42;">시장과 은행이 무너져<br><span style="color:var(--red);">돈이 있어도 살 곳도 살 것도</span> 없습니다</p>
+      </div>
+    </div>
+  </div><div data-reveal="1" style="background-color: #0A0A0A">
+    <div style="width:100%; max-width:640px; margin:0 auto;">
+      <div style="width: 635px; aspect-ratio: 16/10; overflow: hidden; position: relative; background: #161616; height: 219px">
+        <img src="assets/img-2.jpg" alt="오염된 물을 마시는 아이들" style="width: 641px; height: 229px; object-fit: cover">
+      </div>
+      <div style="padding:28px 20px 40px; background:var(--black);">
+        <p style="font-size:12px; font-weight:700; color:var(--grey-txt); letter-spacing:.06em; margin-bottom:10px;">REALITY 02</p>
+        <p style="font-size:21px; font-weight:800; line-height:1.42;">취수원과 상수도망의 파괴로 <span style="color: var(--red);">25,000명</span>이<br>오염된 물을 마시고 있습니다</p>
+      </div>
+    </div>
+  </div>
+
+  <div data-reveal="1" style="background-color: #0A0A0A">
+    <div style="width:100%; max-width:640px; margin:0 auto;">
+      <div style="width: 639px; aspect-ratio: 16/10; overflow: hidden; position: relative; background: #161616; height: 216px">
+        <img src="assets/img-3.jpg" alt="끊어진 교량과 도로" style="width: 642px; height: 210px; object-fit: cover">
+      </div>
+      <div style="padding:28px 20px 64px; background:var(--black);">
+        <p style="font-size:12px; font-weight:700; color:var(--grey-txt); letter-spacing:.06em; margin-bottom:10px;">REALITY 03</p>
+        <p style="font-size:21px; font-weight:800; line-height:1.42;">도로 42km, 교량 30여 개가 끊겨<br><span style="color:var(--red);">구호물자가 갇혀</span> 있습니다</p>
+      </div>
+    </div>
+  </div>
+
+  <section style="background:var(--black); padding:var(--secpad) 20px;">
+    <div style="width:100%; max-width:640px; margin:0 auto;">
+      <p data-reveal="1" style="color:var(--red); font-weight:700; font-size:13px; letter-spacing:.08em; margin-bottom:12px;">Sustainable Development Goals</p>
+      <h2 data-reveal="1" style="font-size:30px; font-weight:800; letter-spacing:-.02em; line-height:1.32; margin-bottom:20px;">지속적인 <span style="color:var(--red);">n차 대응</span>이<br>필요합니다.</h2>
+      <p data-reveal="1" style="font-size:18px; font-weight:700; color:#fff; margin-bottom:12px;">구호는 한 번, 회복은 여러 단계입니다</p>
+      <p data-reveal="1" style="font-size:15px; color:#c0c0c0; line-height:1.75; margin-bottom:34px;">재난 직후의 긴급구호가 끝나도, 일상이 회복되기까지는 시간이 걸립니다. 단계마다 필요한 것이 다르기 때문에, 지원도 이어져야 합니다.</p>
+
+      <div style="display:grid; gap:14px;">
+        <div data-reveal="1" style="display:grid; grid-template-columns:54px 1fr; gap:18px; align-items:start; border:1px solid #2a2a2a; border-radius:14px; padding:24px 22px; background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)); transition:border-color .3s ease, transform .3s ease, background .3s ease;" style-hover="border-color:rgba(225,29,46,.5); transform:translateY(-3px); background:rgba(225,29,46,.04);">
+          <span style="font-size:28px; font-weight:800; color:var(--red); line-height:1.1;">1차</span>
+          <div>
+            <p style="font-size:17px; font-weight:700; margin-bottom:6px;">긴급구호 — 생명을 지키는 단계</p>
+            <p style="font-size:14.5px; color:#bdbdbd; line-height:1.6;">식수, 식량, 위생용품</p>
+          </div>
+        </div>
+        <div data-reveal="1" style="display:grid; grid-template-columns:54px 1fr; gap:18px; align-items:start; border:1px solid #2a2a2a; border-radius:14px; padding:24px 22px; background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)); transition:border-color .3s ease, transform .3s ease, background .3s ease;" style-hover="border-color:rgba(225,29,46,.5); transform:translateY(-3px); background:rgba(225,29,46,.04);">
+          <span style="font-size:28px; font-weight:800; color:var(--red); line-height:1.1;">2차</span>
+          <div>
+            <p style="font-size:17px; font-weight:700; margin-bottom:6px;">겨울나기 — 안전하게 머무는 단계</p>
+            <p style="font-size:14.5px; color:#bdbdbd; line-height:1.6;">방한물품, 임시 거처</p>
+          </div>
+        </div>
+        <div data-reveal="1" style="display:grid; grid-template-columns:54px 1fr; gap:18px; align-items:start; border:1px solid rgba(225,29,46,.45); border-radius:14px; padding:24px 22px; background:rgba(225,29,46,.06); transition:border-color .3s ease, transform .3s ease, background .3s ease;" style-hover="border-color:rgba(225,29,46,.7); transform:translateY(-3px); background:rgba(225,29,46,.1);">
+          <span style="font-size:28px; font-weight:800; color:var(--red); line-height:1.1;">n차</span>
+          <div>
+            <p style="font-size:17px; font-weight:700; margin-bottom:6px;">회복과 대비 — 일상을 되찾는 단계</p>
+            <p style="font-size:14.5px; color:#d2d2d2; line-height:1.6;">생계와 배움의 회복, 다음 재난에 대한 대비</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:radial-gradient(120% 140% at 20% 0%, #171a2e 0%, #0a0a0a 55%); padding:var(--secpad) 20px;">
+    <div style="width:100%; max-width:640px; margin:0 auto;">
+      <p data-reveal="1" style="color:var(--red); font-weight:700; font-size:13px; letter-spacing:.02em; margin-bottom:12px;">OUR RESPONSE</p>
+      <h2 data-reveal="1" style="font-size:27px; font-weight:800; line-height:1.4; margin-bottom:14px;"><strong>한번 일어난 재난은,</strong><br><strong>회복까지 여러 번의 손길로 완성됩니다.</strong></h2>
+      <p data-reveal="1" style="font-size:14.5px; color:#b9b9c4; line-height:1.7; margin-bottom:38px;">소중한 후원금은 네팔 현장에서 깨끗한 물, 겨울나기 임시 거처, <br>일상의 회복까지 가장 필요한 곳에 전달됩니다.</p>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px;">
+        <div data-reveal="1" style="border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:24px 22px; background:rgba(255,255,255,.04); transition:border-color .3s ease, transform .3s ease, background .3s ease;" style-hover="border-color:rgba(225,29,46,.55); transform:translateY(-3px); background:rgba(225,29,46,.06);">
+          <p style="font-size:12px; font-weight:800; color:var(--red); letter-spacing:.1em; margin-bottom:12px;">01</p>
+          <p style="font-size:17px; font-weight:700; margin-bottom:4px;">청년대사</p>
+          <p style="font-size:13px; font-weight:600; color:#9b9fc4; margin-bottom:10px;">현장조사</p>
+          <p style="font-size:14px; color:#b9b9c4; line-height:1.65;">청년 인력을 현지에 파견해 실태를 <br>직접 확인하고, 조사 결과를 콘텐츠화</p>
+        </div>
+        <div data-reveal="1" style="border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:24px 22px; background:rgba(255,255,255,.04); transition:border-color .3s ease, transform .3s ease, background .3s ease;" style-hover="border-color:rgba(225,29,46,.55); transform:translateY(-3px); background:rgba(225,29,46,.06);">
+          <p style="font-size:12px; font-weight:800; color:var(--red); letter-spacing:.1em; margin-bottom:12px;">02</p>
+          <p style="font-size:17px; font-weight:700; margin-bottom:4px;">자원동원</p>
+          <p style="font-size:13px; font-weight:600; color:#9b9fc4; margin-bottom:10px;">모금후원</p>
+          <p style="font-size:14px; color:#b9b9c4; line-height:1.65;">대중과 기업을 대상으로 <br>모금을 통해재원을 마련</p>
+        </div>
+        <div data-reveal="1" style="border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:24px 22px; background:rgba(255,255,255,.04); transition:border-color .3s ease, transform .3s ease, background .3s ease;" style-hover="border-color:rgba(225,29,46,.55); transform:translateY(-3px); background:rgba(225,29,46,.06);">
+          <p style="font-size:12px; font-weight:800; color:var(--red); letter-spacing:.1em; margin-bottom:12px;">03</p>
+          <p style="font-size:17px; font-weight:700; margin-bottom:4px;">컨테이너</p>
+          <p style="font-size:13px; font-weight:600; color:#9b9fc4; margin-bottom:10px;">현물기부</p>
+          <p style="font-size:14px; color:#b9b9c4; line-height:1.65;">현장에 필요한 물품을 컨테이너 <br>단위로 확보해 현지에 발송</p>
+        </div>
+        <div data-reveal="1" style="border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:24px 22px; background:rgba(255,255,255,.04); transition:border-color .3s ease, transform .3s ease, background .3s ease;" style-hover="border-color:rgba(225,29,46,.55); transform:translateY(-3px); background:rgba(225,29,46,.06);">
+          <p style="font-size:12px; font-weight:800; color:var(--red); letter-spacing:.1em; margin-bottom:12px;">04</p>
+          <p style="font-size:17px; font-weight:700; margin-bottom:4px;">볼런투어</p>
+          <p style="font-size:13px; font-weight:600; color:#9b9fc4; margin-bottom:10px;">전문봉사</p>
+          <p style="font-size:14px; color:#b9b9c4; line-height:1.65;">전문성을 갖춘 봉사 인력이 <br>여행 형태로 결합해 현지에서 직접 활동</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section id="donate" style="background:var(--cream); color:#161616; padding:var(--secpad) 20px;">
+    <div style="width:100%; max-width:640px; margin:0 auto;">
+      <p data-reveal="1" style="color:var(--red); font-weight:700; font-size:13px; letter-spacing:.02em; margin-bottom:12px;">HOW TO HELP</p>
+      <h2 data-reveal="1" style="font-size:30px; font-weight:800; letter-spacing:-.02em; line-height:1.32; margin-bottom:34px; color:#161616;">어떤 내일을<br>선물하시겠습니까?</h2>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+        <div data-reveal="1" style="background:#fff; border-radius:16px; padding:26px 18px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,.04); transition:transform .3s cubic-bezier(.2,.8,.3,1), box-shadow .3s ease;" style-hover="transform:translateY(-6px); box-shadow:0 16px 30px rgba(0,0,0,.10);">
+          <div style="font-size:30px; margin-bottom:10px;">🍚</div>
+          <p style="font-size:14.5px; font-weight:700; margin-bottom:8px; color:#2b2b2b;">식량키트 지원</p>
+          <p style="font-size:21px; font-weight:800; color:var(--red); margin-bottom:10px;">30,000원</p>
+          <p style="font-size:12.5px; color:#787878; line-height:1.5;">즉석 비상식량과 영유아 영양 치료식 제공</p>
+        </div>
+        <div data-reveal="1" style="background:#fff; border-radius:16px; padding:26px 18px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,.04); transition:transform .3s cubic-bezier(.2,.8,.3,1), box-shadow .3s ease;" style-hover="transform:translateY(-6px); box-shadow:0 16px 30px rgba(0,0,0,.10);">
+          <div style="font-size:30px; margin-bottom:10px;">💊</div>
+          <p style="font-size:14.5px; font-weight:700; margin-bottom:8px; color:#2b2b2b;">의약물품 지원</p>
+          <p style="font-size:21px; font-weight:800; color:var(--red); margin-bottom:10px;">50,000원</p>
+          <p style="font-size:12.5px; color:#787878; line-height:1.5;">정수 필터, 비누, 수액 세트</p>
+        </div>
+        <div data-reveal="1" style="background:#fff; border-radius:16px; padding:26px 18px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,.04); transition:transform .3s cubic-bezier(.2,.8,.3,1), box-shadow .3s ease;" style-hover="transform:translateY(-6px); box-shadow:0 16px 30px rgba(0,0,0,.10);">
+          <div style="font-size:30px; margin-bottom:10px;">🧣</div>
+          <p style="font-size:14.5px; font-weight:700; margin-bottom:8px; color:#2b2b2b;">생활물품 지원</p>
+          <p style="font-size:21px; font-weight:800; color:var(--red); margin-bottom:10px;">100,000원</p>
+          <p style="font-size:12.5px; color:#787878; line-height:1.5;">방한 담요, 아동 물품, 여성 위생 패드 키트<br></p>
+        </div>
+        <div data-reveal="1" style="background:#fff; border-radius:16px; padding:26px 18px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,.04); transition:transform .3s cubic-bezier(.2,.8,.3,1), box-shadow .3s ease;" style-hover="transform:translateY(-6px); box-shadow:0 16px 30px rgba(0,0,0,.10);">
+          <div style="font-size:30px; margin-bottom:10px;">🏠</div>
+          <p style="font-size:14.5px; font-weight:700; margin-bottom:8px; color:#2b2b2b;">주거공간 지원</p>
+          <p style="font-size:21px; font-weight:800; color:var(--red); margin-bottom:10px;">300,000원</p>
+          <p style="font-size:12.5px; color:#787878; line-height:1.5;">가옥 수리 도구, 아동 친화 보호 공간 조성</p>
+        </div>
+      </div>
+
+      <a href="https://online.mrm.or.kr/OoTNL97" target="_blank" rel="noopener" style="display:block; width:100%; text-align:center; padding:19px 24px; font-size:17px; font-weight:700; border-radius:6px; letter-spacing:-.2px; background:var(--red); color:#fff; margin-top:22px; transition:transform .25s cubic-bezier(.2,.8,.3,1), box-shadow .25s ease;" style-hover="transform:translateY(-2px); box-shadow:0 10px 28px rgba(225,29,46,.45);">후원으로 선물하기</a>
+    </div>
+  </section><section style="background:#f6f6f4; color:#161616; padding:var(--secpad) 20px;">
+    <div style="width:100%; max-width:640px; margin:0 auto;">
+      <p data-reveal="1" style="color:var(--red); font-weight:700; font-size:13px; letter-spacing:.02em; margin-bottom:12px;">HOW TO HELP</p>
+      <h2 data-reveal="1" style="font-size:30px; font-weight:800; letter-spacing:-.02em; line-height:1.32; margin-bottom:34px; color:#161616;">현장 봉사단으로<br>함께하는 방법</h2>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+        <div data-reveal="1" style="background:#fff; border-radius:16px; padding:24px 16px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,.04); transition:transform .3s ease, box-shadow .3s ease;" style-hover="transform:translateY(-5px); box-shadow:0 14px 26px rgba(0,0,0,.08);">
+          <div style="font-size:28px; margin-bottom:10px;">🎨</div>
+          <p style="font-weight:700; font-size:14.5px; margin-bottom:6px;">재능기부</p>
+          <p style="font-size:12.5px; color:#818181;">교육, 문화예술 지원</p>
+        </div>
+        <div data-reveal="1" style="background:#fff; border-radius:16px; padding:24px 16px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,.04); transition:transform .3s ease, box-shadow .3s ease;" style-hover="transform:translateY(-5px); box-shadow:0 14px 26px rgba(0,0,0,.08);">
+          <div style="font-size:28px; margin-bottom:10px;">🩺</div>
+          <p style="font-weight:700; font-size:14.5px; margin-bottom:6px;">의료봉사</p>
+          <p style="font-size:12.5px; color:#818181;">양·한방 의약품 지원</p>
+        </div>
+        <div data-reveal="1" style="background:#fff; border-radius:16px; padding:24px 16px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,.04); transition:transform .3s ease, box-shadow .3s ease;" style-hover="transform:translateY(-5px); box-shadow:0 14px 26px rgba(0,0,0,.08);">
+          <div style="font-size:28px; margin-bottom:10px;">🏗️</div>
+          <p style="font-weight:700; font-size:14.5px; margin-bottom:6px;">복구작업</p>
+          <p style="font-size:12.5px; color:#818181;">마을, 건축 리모델링 지원</p>
+        </div>
+        <div data-reveal="1" style="background:#fff; border-radius:16px; padding:24px 16px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,.04); transition:transform .3s ease, box-shadow .3s ease;" style-hover="transform:translateY(-5px); box-shadow:0 14px 26px rgba(0,0,0,.08);">
+          <div style="font-size:28px; margin-bottom:10px;">📦</div>
+          <p style="font-weight:700; font-size:14.5px; margin-bottom:6px;">구호품 전달</p>
+          <p style="font-size:12.5px; color:#818181;">현장에 직접 구호물품 지원</p>
+        </div>
+      </div>
+
+      <div data-reveal="1" style="margin-top:28px; border-top:1px solid #e4e4e0;">
+        <div style="display:flex; gap:18px; padding:18px 2px; border-bottom:1px solid #e4e4e0;">
+          <div style="flex:0 0 78px; font-size:13px; color:#8a8a8a; font-weight:600; padding-top:1px;">활동기간</div>
+          <div style="font-size:14.5px; font-weight:600; color:#1c1c1c; line-height:1.55;">추후 공지 (별도 안내 예정)</div>
+        </div>
+        <div style="display:flex; gap:18px; padding:18px 2px; border-bottom:1px solid #e4e4e0;">
+          <div style="flex:0 0 78px; font-size:13px; color:#8a8a8a; font-weight:600; padding-top:1px;">활동지역</div>
+          <div style="font-size:14.5px; font-weight:600; color:#1c1c1c; line-height:1.55;">네팔 라수와 · 누와코트 · 다딩 · 고르카 · 타나훈 · 치트완&nbsp;일대</div>
+        </div>
+        <div style="display:flex; gap:18px; padding:18px 2px; border-bottom:1px solid #e4e4e0;">
+          <div style="flex:0 0 78px; font-size:13px; color:#8a8a8a; font-weight:600; padding-top:1px;">활동내용</div>
+          <div style="font-size:14.5px; font-weight:600; color:#1c1c1c; line-height:1.55;">구호물품 전달, 현장 복구, 의료·재능 봉사</div>
+        </div>
+        <div style="display:flex; gap:18px; padding:18px 2px; border-bottom:1px solid #e4e4e0;">
+          <div style="flex:0 0 78px; font-size:13px; color:#8a8a8a; font-weight:600; padding-top:1px;">활동특전</div>
+          <div style="font-size:14.5px; font-weight:600; color:#1c1c1c; line-height:1.55;">봉사활동 확인서 및 활동 기록 제공</div>
+        </div>
+      </div>
+
+      <div data-reveal="1" style="background:#fff; border-radius:14px; padding:24px 20px; margin-top:22px;">
+        <div style="display:flex; gap:10px; font-size:14px; margin-bottom:14px; align-items:flex-start;"><span style="color:var(--red); font-weight:800; flex-shrink:0;">✔</span><span>해외 저개발 국가 지원에 관심 많으신 분</span></div>
+        <div style="display:flex; gap:10px; font-size:14px; align-items:flex-start;"><span style="color:var(--red); font-weight:800; flex-shrink:0;">✔</span><span>공공여행으로 프로보노 민간 외교활동을 원하시는 분</span></div>
+        <p style="color:var(--red); font-weight:800; margin-top:16px; font-size:14.5px;">모집정원: 30명 미만</p>
+        <p style="color:#8a8a8a; font-size:13.5px; margin-top:4px;">모집기간: 추후 공지 (별도 안내 예정)</p>
+      </div>
+
+      <a href="https://probono.campaignus.me/voluntour" target="_blank" rel="noopener" style="display:block; width:100%; text-align:center; padding:19px 24px; font-size:17px; font-weight:700; border-radius:6px; letter-spacing:-.2px; background:var(--red); color:#fff; margin-top:22px; transition:transform .25s cubic-bezier(.2,.8,.3,1), box-shadow .25s ease;" style-hover="transform:translateY(-2px); box-shadow:0 10px 28px rgba(225,29,46,.45);">볼런투어로 참여하기</a>
+    </div>
+  </section>
+
+  
+
+  <section style="background:#fbfaf8; color:#161616; padding:var(--secpad) 20px; position:relative; overflow:hidden;">
+    <div style="width:100%; max-width:640px; margin:0 auto;">
+      
+      
+      <p data-reveal="1" style="position:relative; color:#c65a4e; font-weight:700; font-size:13px; letter-spacing:.06em; margin-bottom:14px;">50+ COUNTRIES</p>
+      <h2 data-reveal="1" style="font-size:27px; font-weight:800; line-height:1.36; margin-bottom:32px;">50개국 글로벌 맞춤형<br>지원과 일상 회복</h2>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+        <div data-reveal="1" style="background:#fff; border-radius:14px; padding:20px 18px; box-shadow:0 2px 8px rgba(0,0,0,.04); transition:transform .3s ease, box-shadow .3s ease;" style-hover="transform:translateY(-4px); box-shadow:0 12px 22px rgba(0,0,0,.08);">
+          <span style="display:inline-block; background:#fdece9; color:var(--red); font-weight:800; font-size:12.5px; padding:4px 10px; border-radius:20px; margin-bottom:12px;">01</span>
+          <p style="font-weight:700; font-size:15.5px; margin-bottom:8px;">케냐</p>
+          <p style="font-size:12.5px; color:#818181; line-height:1.5;">지역사회 특성을 반영한 회복 지원 시스템 구축</p>
+        </div>
+        <div data-reveal="1" style="background:#fff; border-radius:14px; padding:20px 18px; box-shadow:0 2px 8px rgba(0,0,0,.04); transition:transform .3s ease, box-shadow .3s ease;" style-hover="transform:translateY(-4px); box-shadow:0 12px 22px rgba(0,0,0,.08);">
+          <span style="display:inline-block; background:#fdece9; color:var(--red); font-weight:800; font-size:12.5px; padding:4px 10px; border-radius:20px; margin-bottom:12px;">02</span>
+          <p style="font-weight:700; font-size:15.5px; margin-bottom:8px;">마다가스카르</p>
+          <p style="font-size:12.5px; color:#818181; line-height:1.5;">현지 상황에 완벽히 맞춘 구호 물품 체계 운영</p>
+        </div>
+        <div data-reveal="1" style="background:#fff; border-radius:14px; padding:20px 18px; box-shadow:0 2px 8px rgba(0,0,0,.04); transition:transform .3s ease, box-shadow .3s ease;" style-hover="transform:translateY(-4px); box-shadow:0 12px 22px rgba(0,0,0,.08);">
+          <span style="display:inline-block; background:#fdece9; color:var(--red); font-weight:800; font-size:12.5px; padding:4px 10px; border-radius:20px; margin-bottom:12px;">03</span>
+          <p style="font-weight:700; font-size:15.5px; margin-bottom:8px;">필리핀</p>
+          <p style="font-size:12.5px; color:#818181; line-height:1.5;">식사·생활용품·치료 등 개인 단위 세밀한 필요 파악</p>
+        </div>
+        <div data-reveal="1" style="background:#fff; border-radius:14px; padding:20px 18px; box-shadow:0 2px 8px rgba(0,0,0,.04); transition:transform .3s ease, box-shadow .3s ease;" style-hover="transform:translateY(-4px); box-shadow:0 12px 22px rgba(0,0,0,.08);">
+          <span style="display:inline-block; background:#fdece9; color:var(--red); font-weight:800; font-size:12.5px; padding:4px 10px; border-radius:20px; margin-bottom:12px;">04</span>
+          <p style="font-weight:700; font-size:15.5px; margin-bottom:8px;">우즈베키스탄</p>
+          <p style="font-size:12.5px; color:#818181; line-height:1.5;">공공보건사업 추진</p>
+        </div>
+      </div>
+
+      <p data-reveal="1" style="text-align:center; font-size:18px; font-weight:800; color:var(--navy); line-height:1.5; margin-top:32px;">그 외 50여 개국에<br>지원과 일상의 회복을 도왔습니다.</p>
+    </div>
+  </section>
+
+  <section style="background: linear-gradient(180deg, #2e3255 0%, #2b2f52 100%); padding: var(--secpad) 20px;">
+    <div style="width:100%; max-width:640px; margin:0 auto;">
+      <p data-reveal="1" style="color:#a7abd6; font-weight:700; font-size:13px; letter-spacing:.06em; margin-bottom:14px;">TOGETHER</p>
+      <h2 data-reveal="1" style="font-size:26px; font-weight:800; line-height:1.4; margin-bottom:30px;">재난은 한순간에 일어나지만,<br>회복은 오랜 시간이 필요합니다.</h2>
+
+      <div data-reveal="1" style="background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:26px 22px;">
+        <p style="font-size:14.5px; color:#e4e5f6; line-height:1.75; margin-bottom:14px;">지금 네팔의 누군가는 안전한 곳에서 밤을 보내기 위한 공간이 필요하고, 누군가는 한 끼의 식사를, 누군가는 치료를 기다리고 있습니다.</p>
+        <p style="font-size:14.5px; color:#fff; line-height:1.75; font-weight:700;">우리가 보내는 후원금 하나하나는 한 사람의 식사, 한 가족의 생활용품, 한 가정의 안전한 내일이 됩니다.</p>
+      </div>
+
+      <div data-reveal="1" style="background:#fff; color:#161616; border-radius:18px; padding:30px 22px; margin-top:26px; text-align:center;">
+        <p style="font-size:15px; font-weight:700; margin-bottom:18px;">작은 나눔도 모이면 큰 힘이 됩니다</p>
+        <a href="https://online.mrm.or.kr/OoTNL97" target="_blank" rel="noopener" style="display:block; width:100%; text-align:center; padding:19px 24px; font-size:17px; font-weight:700; border-radius:6px; letter-spacing:-.2px; background:var(--red); color:#fff; transition:transform .25s cubic-bezier(.2,.8,.3,1), box-shadow .25s ease;" style-hover="transform:translateY(-2px); box-shadow:0 10px 28px rgba(225,29,46,.45);">모두가 떠난 진흙더미 위, 네팔의 회복 함께하기</a>
+      </div>
+      <div data-reveal="1" style="background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 28px 22px; width: 100%; max-width: 640px; margin: 26px auto 0; text-align: center;">
+        <p style="font-size:18px; font-weight:800; margin-bottom:22px;">네팔 긴급구호 후원하기</p>
+        <p style="font-size:14.5px; font-weight:700; color:#c6c9e6; margin-bottom:10px;">방법 1. 계좌후원</p>
+        <p style="font-size:14.5px; color:#e7e8f5; margin-bottom:6px;">후원계좌 │ <b style="color:#fff;">신한은행 140-009-442057</b></p>
+        <p style="font-size:14.5px; color:#e7e8f5; margin-bottom:6px;">예금주 │ (사)프로보노국제협력재단</p>
+        <p style="font-size:14.5px; color:#e7e8f5; margin-bottom:6px;">입금명 │ 이름_네팔</p>
+        <p style="font-size:14.5px; font-weight:700; color:#c6c9e6; margin-bottom:10px; margin-top:22px;">방법 2. 홈페이지 지정후원</p>
+        <p style="font-size:14.5px; color:#e7e8f5; margin-bottom:6px;">상단 후원하기 버튼 클릭 &gt; 지정후원</p>
+      </div>
+    </div>
+  </section><section id="donate-info" style="background: linear-gradient(180deg, #2b2f52 0%, #292d4d 100%); padding: 0 20px var(--secpad);">
+    <div style="width:100%; max-width:640px; margin:0 auto;">
+      
+
+      <div data-reveal="1" style="text-align:center; margin-top:44px;">
+        <p style="font-size:19px; font-weight:800; margin-bottom:16px;">"재난을 넘어, 다시 일상으로."</p>
+        <p style="font-size:14px; color:#c6c9e6; line-height:1.7;">네팔의 오늘을 지키고 내일의 희망을 이어가는 일에<br>여러분의 따뜻한 마음을 보태주세요.</p>
+      </div>
+
+      <p data-reveal="1" style="text-align:center; margin-top:38px; opacity:.85; font-weight:700; letter-spacing:.02em; font-size:15px; color:#d8daf0;">Probono International Cooperation Organization</p>
+    </div>
+  </section>
+
+  
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#e11d2e&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#e11d2e&quot;,&quot;#c2410c&quot;,&quot;#1d4ed8&quot;,&quot;#0f766e&quot;],&quot;section&quot;:&quot;테마&quot;},&quot;sectionPadding&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:64,&quot;min&quot;:36,&quot;max&quot;:96,&quot;step&quot;:4,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;테마&quot;},&quot;revealOnScroll&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;동작&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.applyVars();
+    this.setupReveal();
+  }
+  componentDidUpdate() {
+    this.applyVars();
+    this.setupReveal();
+  }
+  applyVars() {
+    const r = document.documentElement.style;
+    r.setProperty('--red', this.props.accentColor ?? '#e11d2e');
+    r.setProperty('--secpad', (this.props.sectionPadding ?? 64) + 'px');
+  }
+  setupReveal() {
+    const on = this.props.revealOnScroll ?? true;
+    const items = Array.from(document.querySelectorAll('[data-reveal]'));
+    const show = (el) => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    };
+    if (!on || !('IntersectionObserver' in window) ||
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      items.forEach(show);
+      return;
+    }
+    const pending = [];
+    items.forEach((el) => {
+      if (el.dataset.revealed === '1') return;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(28px)';
+      el.style.transition = 'opacity .8s cubic-bezier(.2,.7,.3,1), transform .8s cubic-bezier(.2,.7,.3,1)';
+      pending.push(el);
+    });
+    const pass = () => {
+      const h = window.innerHeight || 800;
+      pending.slice().forEach((el) => {
+        if (el.dataset.revealed === '1') return;
+        const r = el.getBoundingClientRect();
+        if (r.top < h - 40 && r.bottom > 0) {
+          el.dataset.revealed = '1';
+          show(el);
+        }
+      });
+    };
+    this.revealPass = () => pass();
+    document.addEventListener('scroll', this.revealPass, { capture: true, passive: true });
+    window.addEventListener('resize', this.revealPass);
+    if (this.poll) clearInterval(this.poll);
+    this.poll = setInterval(() => {
+      pass();
+      if (!pending.some((el) => el.dataset.revealed !== '1')) {
+        clearInterval(this.poll);
+        this.poll = null;
+      }
+    }, 200);
+    pass();
+    this.failsafe = setTimeout(() => {
+      if (pending.some((el) => el.dataset.revealed === '1')) return;
+      pending.forEach((el) => { el.dataset.revealed = '1'; show(el); });
+    }, 1500);
+  }
+  componentWillUnmount() {
+    if (this.poll) clearInterval(this.poll);
+    if (this.failsafe) clearTimeout(this.failsafe);
+    if (this.revealPass) {
+      document.removeEventListener('scroll', this.revealPass, { capture: true });
+      window.removeEventListener('resize', this.revealPass);
+    }
+  }
+}
+</script>
+</body>
+</html>
