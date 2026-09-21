@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>네팔 긴급구호 캠페인 | 프로보노국제협력재단</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<style>
+  :root{
+    --red:#e11d2e;
+    --red-dark:#b8121f;
+    --black:#0a0a0a;
+    --near-black:#141414;
+    --card-black:#1c1c1c;
+    --grey-txt:#9a9a9a;
+    --navy:#3d4269;
+    --navy-dark:#2c3050;
+    --cream:#faf7f2;
+    --cream2:#f3ece3;
+    --white:#ffffff;
+    --font: "Pretendard Variable", "Pretendard", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
+    --ease-out: cubic-bezier(.22,1,.36,1);
+    --ease-standard: cubic-bezier(.4,0,.2,1);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family: var(--font);
+    background:var(--navy-dark);
+    color:var(--white);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer; border:none;}
+  .wrap{width:100%; max-width:640px; margin:0 auto; position:relative;}
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .7s var(--ease-out), transform .7s var(--ease-out);}
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+  .reveal-delay-1.is-visible{transition-delay:.08s;}
+  .reveal-delay-2.is-visible{transition-delay:.16s;}
+  .reveal-delay-3.is-visible{transition-delay:.24s;}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+    *{scroll-behavior:auto !important;}
+  }
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    padding:19px 24px;
+    font-size:17px;
+    font-weight:700;
+    border-radius:6px;
+    letter-spacing:-.2px;
+    position:relative;
+    overflow:hidden;
+    transition:transform .35s var(--ease-out), box-shadow .35s var(--ease-out), background-color .3s var(--ease-standard);
+    -webkit-tap-highlight-color:transparent;
+  }
+  .btn::after{
+    content:"";
+    position:absolute; inset:0;
+    background:rgba(255,255,255,.14);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .55s var(--ease-out);
+  }
+  .btn:hover::after{transform:scaleX(1);}
+  .btn:active{transform:scale(.98);}
+  .btn-red{background:var(--red); color:#fff; box-shadow:0 6px 20px rgba(225,29,46,.0);}
+  .btn-red:hover{box-shadow:0 8px 22px rgba(225,29,46,.38); transform:translateY(-2px);}
+  .btn-red:active{transform:translateY(0) scale(.98);}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative; min-height:100vh; display:flex; flex-direction:column; justify-content:space-between; background:#000;}
+  .hero-bg{position:absolute; inset:0; overflow:hidden; background:#111;}
+  .hero-bg img{width:100%; height:100%; object-fit:cover; object-position:center 30%; transform:scale(1.04); animation:heroZoom 20s var(--ease-out) forwards;}
+  @keyframes heroZoom{from{transform:scale(1.04);} to{transform:scale(1);}}
+  .hero-bg::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.15) 35%, rgba(0,0,0,.55) 68%, rgba(0,0,0,.97) 100%);
+  }
+  .hero-top{position:relative; z-index:2; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px 20px; font-size:12px; letter-spacing:.08em; color:#f2f2f2;}
+  .hero-top .tag{display:flex; align-items:center; gap:8px; font-weight:600; line-height:1.7;}
+  .hero-top .credit{letter-spacing:normal; text-align:right;}
+  .hero-top .credit span{letter-spacing:.06em;}
+  .dot{width:7px; height:7px; border-radius:50%; background:var(--red); box-shadow:0 0 0 0 rgba(225,29,46,.5); animation:pulse 2.4s ease-out infinite; flex-shrink:0;}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(225,29,46,.45);}
+    70%{box-shadow:0 0 0 6px rgba(225,29,46,0);}
+    100%{box-shadow:0 0 0 0 rgba(225,29,46,0);}
+  }
+  .hero-content{position:relative; z-index:2; padding:0 20px 44px;}
+  .eyebrow-red{color:var(--red); font-weight:700; font-size:20px; margin-bottom:10px;}
+  .hero-title{font-size:46px; font-weight:800; line-height:1.18; letter-spacing:-.02em; margin-bottom:18px;}
+  .hero-title .hl{color:var(--red);}
+  .hero-sub{font-size:16px; color:#e6e6e6; margin-bottom:26px; max-width:480px;}
+  .hero .btn{max-width:520px;}
+  .scroll-cue{position:absolute; bottom:14px; left:50%; transform:translateX(-50%); z-index:2; width:20px; height:32px; border:2px solid rgba(255,255,255,.5); border-radius:12px;}
+  .scroll-cue::before{content:""; position:absolute; top:6px; left:50%; width:3px; height:6px; background:#fff; border-radius:2px; transform:translateX(-50%); animation:scrollDot 1.6s infinite;}
+  @keyframes scrollDot{0%{opacity:1; top:6px;} 100%{opacity:0; top:16px;}}
+
+  /* ---------- CRISIS section ---------- */
+  .section-dark{background:var(--black); padding:64px 20px;}
+  .eyebrow{color:var(--red); font-weight:700; font-size:13px; letter-spacing:.02em; margin-bottom:12px;}
+  .h2{font-size:30px; font-weight:800; letter-spacing:-.02em; line-height:1.32; margin-bottom:34px;}
+
+  .quote-block{border-left:2px solid var(--red); padding-left:20px; margin-bottom:34px;}
+  .quote-block p{font-size:15.5px; color:#d6d6d6; line-height:1.78; margin-bottom:16px;}
+  .quote-block p:last-child{margin-bottom:0; color:#efefef; font-weight:700;}
+
+  .fact-card{
+    border:1px solid #2a2a2a;
+    border-radius:14px;
+    padding:26px 22px;
+    margin-bottom:16px;
+    background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+    transition:border-color .4s var(--ease-standard), transform .4s var(--ease-out), background .4s var(--ease-standard);
+  }
+  .fact-card:hover{border-color:rgba(225,29,46,.45); transform:translateY(-2px); background:rgba(225,29,46,.035);}
+  .fact-emoji{font-size:26px; margin-bottom:14px; display:block;}
+  .fact-title{font-size:17px; font-weight:700; margin-bottom:10px;}
+  .fact-body{font-size:14.5px; color:#c7c7c7; line-height:1.6;}
+
+  .zone-banner{
+    background:var(--red);
+    color:#fff;
+    text-align:center;
+    font-weight:700;
+    font-size:14.5px;
+    padding:20px 16px;
+    margin:8px -20px 0;
+    letter-spacing:-.01em;
+  }
+
+  /* ---------- 3 realities ---------- */
+  .reality-block{margin-bottom:0; background:var(--black);}
+  .reality-photo{width:100%; aspect-ratio:16/10; overflow:hidden; position:relative; background:#161616;}
+  .reality-photo img{width:100%; height:100%; object-fit:cover; transition:transform .9s var(--ease-out);}
+  .reality-block:hover .reality-photo img{transform:scale(1.03);}
+  .reality-text{padding:28px 20px 40px; background:var(--black);}
+  .reality-tag{font-size:12px; font-weight:700; color:var(--grey-txt); letter-spacing:.06em; margin-bottom:10px;}
+  .reality-headline{font-size:21px; font-weight:800; line-height:1.42;}
+  .reality-headline .hl{color:var(--red);}
+
+  /* ---------- SDG stage tiers ---------- */
+  .stage-list{display:grid; gap:14px;}
+  .stage-card{
+    display:grid; grid-template-columns:54px 1fr; gap:18px; align-items:start;
+    border:1px solid #2a2a2a; border-radius:14px; padding:24px 22px;
+    background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+    transition:border-color .4s var(--ease-standard), transform .4s var(--ease-out), background .4s var(--ease-standard);
+  }
+  .stage-card:hover{border-color:rgba(225,29,46,.45); transform:translateY(-2px); background:rgba(225,29,46,.035);}
+  .stage-card.active{border-color:rgba(225,29,46,.45); background:rgba(225,29,46,.06);}
+  .stage-card.active:hover{border-color:rgba(225,29,46,.65); background:rgba(225,29,46,.09);}
+  .stage-num{font-size:28px; font-weight:800; color:var(--red); line-height:1.1;}
+  .stage-title{font-size:17px; font-weight:700; margin-bottom:6px;}
+  .stage-desc{font-size:14.5px; color:#bdbdbd; line-height:1.6;}
+  .stage-card.active .stage-desc{color:#d2d2d2;}
+
+  /* ---------- OUR RESPONSE (4-tile) ---------- */
+  .section-navy{background:radial-gradient(120% 140% at 20% 0%, #171a2e 0%, #0a0a0a 55%); padding:64px 20px;}
+  .response-title{font-size:27px; font-weight:800; line-height:1.4; margin-bottom:14px;}
+  .response-sub{font-size:14.5px; color:#b9b9c4; line-height:1.7; margin-bottom:38px;}
+  .op-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px;}
+  .op-card{
+    border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:24px 22px;
+    background:rgba(255,255,255,.04);
+    transition:border-color .4s var(--ease-standard), transform .4s var(--ease-out), background .4s var(--ease-standard);
+  }
+  .op-card:hover{border-color:rgba(225,29,46,.5); transform:translateY(-2px); background:rgba(225,29,46,.05);}
+  .op-num{font-size:12px; font-weight:800; color:var(--red); letter-spacing:.1em; margin-bottom:12px;}
+  .op-title{font-size:17px; font-weight:700; margin-bottom:4px;}
+  .op-sub{font-size:13px; font-weight:600; color:#9b9fc4; margin-bottom:10px;}
+  .op-desc{font-size:14px; color:#b9b9c4; line-height:1.65;}
+
+  /* ---------- HOW TO HELP - donations ---------- */
+  .section-cream{background:var(--cream); color:#161616; padding:64px 20px;}
+  .section-cream .eyebrow{color:var(--red);}
+  .section-cream .h2{color:#161616;}
+  .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .give-card{
+    background:#fff;
+    border-radius:16px;
+    padding:26px 18px;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.04);
+    transition:transform .4s var(--ease-out), box-shadow .4s var(--ease-out);
+  }
+  .give-card:hover{transform:translateY(-4px); box-shadow:0 12px 24px rgba(0,0,0,.08);}
+  .give-emoji{font-size:30px; margin-bottom:10px;}
+  .give-name{font-size:14.5px; font-weight:700; margin-bottom:8px; color:#2b2b2b;}
+  .give-price{font-size:21px; font-weight:800; color:var(--red); margin-bottom:10px;}
+  .give-desc{font-size:12.5px; color:#787878; line-height:1.5;}
+  .cream-cta{margin-top:22px;}
+
+  /* ---------- volunteer section ---------- */
+  .section-cream2{background:#f6f6f4; color:#161616; padding:64px 20px;}
+  .vol-card{
+    background:#fff;
+    border-radius:16px;
+    padding:24px 16px;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.04);
+    transition:transform .4s var(--ease-out), box-shadow .4s var(--ease-out);
+  }
+  .vol-card:hover{transform:translateY(-3px); box-shadow:0 10px 20px rgba(0,0,0,.07);}
+  .vol-emoji{font-size:28px; margin-bottom:10px;}
+  .vol-name{font-weight:700; font-size:14.5px; margin-bottom:6px;}
+  .vol-desc{font-size:12.5px; color:#818181;}
+
+  .info-table{margin-top:28px; border-top:1px solid #e4e4e0;}
+  .info-row{display:flex; gap:18px; padding:18px 2px; border-bottom:1px solid #e4e4e0;}
+  .info-label{flex:0 0 78px; font-size:13px; color:#8a8a8a; font-weight:600; padding-top:1px;}
+  .info-value{font-size:14.5px; font-weight:600; color:#1c1c1c; line-height:1.55;}
+
+  .check-box{background:#fff; border-radius:14px; padding:24px 20px; margin-top:22px;}
+  .check-line{display:flex; gap:10px; font-size:14px; margin-bottom:14px; align-items:flex-start;}
+  .check-line:last-of-type{margin-bottom:0;}
+  .check-mark{color:var(--red); font-weight:800; flex-shrink:0;}
+  .quota-line{color:var(--red); font-weight:800; margin-top:16px; font-size:14.5px;}
+  .period-line{color:#8a8a8a; font-size:13.5px; margin-top:4px;}
+
+  /* ---------- 50 countries ---------- */
+  .section-map{background:#fbfaf8; color:#161616; padding:64px 20px; position:relative; overflow:hidden;}
+  .map-tag{color:#c65a4e; font-weight:700; font-size:13px; letter-spacing:.06em; margin-bottom:14px;}
+  .map-title{font-size:27px; font-weight:800; line-height:1.36; margin-bottom:32px;}
+  .country-card{background:#fff; border-radius:14px; padding:20px 18px; box-shadow:0 2px 8px rgba(0,0,0,.04); transition:transform .4s var(--ease-out), box-shadow .4s var(--ease-out);}
+  .country-card:hover{transform:translateY(-3px); box-shadow:0 10px 18px rgba(0,0,0,.07);}
+  .country-num{display:inline-block; background:#fdece9; color:var(--red); font-weight:800; font-size:12.5px; padding:4px 10px; border-radius:20px; margin-bottom:12px;}
+  .country-name{font-weight:700; font-size:15.5px; margin-bottom:8px;}
+  .country-desc{font-size:12.5px; color:#818181; line-height:1.5;}
+  .map-closing{text-align:center; font-size:18px; font-weight:800; color:var(--navy); line-height:1.5; margin-top:32px;}
+
+  /* ---------- TOGETHER ---------- */
+  .section-navy3{background:linear-gradient(180deg, #2e3255 0%, #2b2f52 100%); padding:64px 20px;}
+  .since-label{color:#a7abd6; font-weight:700; font-size:13px; letter-spacing:.06em; margin-bottom:14px;}
+  .together-title{font-size:26px; font-weight:800; line-height:1.4; margin-bottom:30px;}
+  .together-box{background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:26px 22px;}
+  .together-box p{font-size:14.5px; color:#e4e5f6; line-height:1.75; margin-bottom:14px;}
+  .together-box p:last-child{margin-bottom:0; font-weight:700; color:#fff;}
+
+  .final-cta-box{background:#fff; color:#161616; border-radius:18px; padding:30px 22px; margin-top:26px; text-align:center;}
+  .final-cta-line{font-size:15px; font-weight:700; margin-bottom:18px;}
+
+  /* ---------- donate info ---------- */
+  .donate-box{background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:16px; padding:28px 22px; width:100%; max-width:640px; margin:26px auto 0; text-align:center;}
+  .donate-title{font-size:18px; font-weight:800; margin-bottom:22px;}
+  .method-title{font-size:14.5px; font-weight:700; color:#c6c9e6; margin-bottom:10px; margin-top:22px;}
+  .method-title:first-of-type{margin-top:0;}
+  .donate-line{font-size:14.5px; color:#e7e8f5; margin-bottom:6px;}
+  .donate-line b{color:#fff;}
+
+  .section-navy4{background:linear-gradient(180deg, #2b2f52 0%, #292d4d 100%); padding:0 20px 64px;}
+  .closing-quote{text-align:center; margin-top:44px;}
+  .closing-quote .q{font-size:19px; font-weight:800; margin-bottom:16px;}
+  .closing-quote .d{font-size:14px; color:#c6c9e6; line-height:1.7;}
+  .brand-mark{text-align:center; margin-top:38px; opacity:.85; font-weight:700; letter-spacing:.02em; font-size:15px; color:#d8daf0;}
+
+  ::selection{background:var(--red); color:#fff;}
+
+  @media (min-width:641px){
+    .hero-title{font-size:56px;}
+    .h2{font-size:34px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202608/27/ab5e2d21-d375-495f-b0da-f7bda67f6855.jpg" alt="네팔 산사태 피해 항공 사진">
+  </div>
+  <div class="hero-top wrap">
+    <span class="tag"><span class="dot"></span>NEPAL EMERGENCY RELIEF<br>2026.09.21 기준</span>
+    <span class="credit">공동주관: <span>글로벌호프</span>, <span>월드케어</span>, <span>프로보노국제협력재단</span></span>
+  </div>
+  <div class="hero-content reveal wrap">
+    <p class="eyebrow-red">기후 재난대응 모금캠페인</p>
+    <h1 class="hero-title">네팔의 <span class="hl">일상을 </span>이어주세요.</h1>
+    <p class="hero-sub">또 다른 위기대응의 시작, 기후변화로 빙하홍수 피해를 입은 네팔에 구호 모금 및 2차 대응 캠페인을 진행합니다.</p>
+    <a href="#donate" class="btn btn-red">지금 재난대응에 후원하기</a>
+  </div>
+  <div class="scroll-cue"></div>
+</section>
+
+<!-- ================= CRISIS ================= -->
+<section class="section-dark">
+  <div class="wrap">
+    <p class="eyebrow reveal">CRISIS</p>
+    <h2 class="h2 reveal">'도망쳐!' 외침조차<br>삼켜버린 흙더미</h2>
+
+    <div class="quote-block reveal">
+      <p>2026년 8월 26일 아침, 히말라야의 빙하가 무너졌습니다. 얼음과 바위, 흙더미가 강을 타고 마을을 덮쳤습니다. 가족과 걷던 길, 친구들과 공부하던 학교, 이웃을 만나던 시장이 한순간에 사라졌습니다.</p>
+      <p>살아남은 사람들의 시간은 그날에 멈춰 있습니다. 물은 빠졌지만, 길과 다리, 집과 일터는 돌아오지 않았습니다.</p>
+    </div>
+
+    <div class="fact-card reveal">
+      <span class="fact-emoji">🏔️</span>
+      <p class="fact-title">자연의 역습</p>
+      <p class="fact-body">해발 5,000m 빙하 붕괴. 시속 180km 진흙 급류가 덮쳐 대피 시간이 없었습니다.</p>
+    </div>
+
+    <div class="fact-card reveal">
+      <span class="fact-emoji">⚠️</span>
+      <p class="fact-title">사상 최악의 참사</p>
+      <p class="fact-body">홍수 재난으로 인해 1,453명의 사망자와 6,664명의 실종자가 발생했습니다. (9월21일 기준)</p>
+    </div>
+
+    <div class="fact-card reveal">
+      <span class="fact-emoji">🏚️</span>
+      <p class="fact-title">소멸된 삶의 터전</p>
+      <p class="fact-body">라수와, 누와코트, 다딩, 고르카, 타나훈, 치트완 지역 국가 재난 위기 선포. 이재민들의 모든 생계 기반이 사라졌습니다.</p>
+    </div>
+  </div>
+  <div class="zone-banner reveal">라수와 · 누와코트 · 다딩 · 고르카 · 타나훈 · 치트완 지역 — 국가 재난 위기 선포 지역</div>
+</section>
+
+<!-- ================= 3 REALITIES ================= -->
+<section class="section-dark" style="padding-bottom:0;">
+  <div class="wrap">
+    <p class="eyebrow reveal">3 REALITIES</p>
+    <h2 class="h2 reveal" style="margin-bottom:0;">수해민들이 마주한<br>더 가혹한 3가지 현실</h2>
+  </div>
+</section>
+
+<div class="reality-block reveal">
+  <div class="wrap">
+    <div class="reality-photo"><img src="assets/img-1.jpg" alt="무너진 상가와 시장"></div>
+    <div class="reality-text">
+      <p class="reality-tag">REALITY 01</p>
+      <p class="reality-headline">시장과 은행이 무너져<br><span class="hl">돈이 있어도 살 곳도 살 것도</span> 없습니다</p>
+    </div>
+  </div>
+</div>
+
+<div class="reality-block reveal">
+  <div class="wrap">
+    <div class="reality-photo"><img src="assets/img-2.jpg" alt="오염된 물을 마시는 아이들"></div>
+    <div class="reality-text">
+      <p class="reality-tag">REALITY 02</p>
+      <p class="reality-headline">취수원과 상수도망의 파괴로 <span class="hl">25,000명</span>이<br>오염된 물을 마시고 있습니다</p>
+    </div>
+  </div>
+</div>
+
+<div class="reality-block reveal">
+  <div class="wrap">
+    <div class="reality-photo"><img src="assets/img-3.jpg" alt="끊어진 교량과 도로"></div>
+    <div class="reality-text" style="padding-bottom:64px;">
+      <p class="reality-tag">REALITY 03</p>
+      <p class="reality-headline">도로 42km, 교량 30여 개가 끊겨<br><span class="hl">구호물자가 갇혀</span> 있습니다</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= SDG / n차 대응 ================= -->
+<section class="section-dark">
+  <div class="wrap">
+    <p class="eyebrow reveal" style="letter-spacing:.08em;">Sustainable Development Goals</p>
+    <h2 class="h2 reveal" style="margin-bottom:20px;">지속적인 <span style="color:var(--red);">n차 대응</span>이<br>필요합니다.</h2>
+    <p class="reveal" style="font-size:18px; font-weight:700; color:#fff; margin-bottom:12px;">구호는 한 번, 회복은 여러 단계입니다</p>
+    <p class="reveal" style="font-size:15px; color:#c0c0c0; line-height:1.75; margin-bottom:34px;">재난 직후의 긴급구호가 끝나도, 일상이 회복되기까지는 시간이 걸립니다. 단계마다 필요한 것이 다르기 때문에, 지원도 이어져야 합니다.</p>
+
+    <div class="stage-list">
+      <div class="stage-card reveal">
+        <span class="stage-num">1차</span>
+        <div>
+          <p class="stage-title">긴급구호 — 생명을 지키는 단계</p>
+          <p class="stage-desc">식수, 식량, 위생용품</p>
+        </div>
+      </div>
+      <div class="stage-card reveal reveal-delay-1">
+        <span class="stage-num">2차</span>
+        <div>
+          <p class="stage-title">겨울나기 — 안전하게 머무는 단계</p>
+          <p class="stage-desc">방한물품, 임시 거처</p>
+        </div>
+      </div>
+      <div class="stage-card active reveal reveal-delay-2">
+        <span class="stage-num">n차</span>
+        <div>
+          <p class="stage-title">회복과 대비 — 일상을 되찾는 단계</p>
+          <p class="stage-desc">생계와 배움의 회복, 다음 재난에 대한 대비</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OUR RESPONSE ================= -->
+<section class="section-navy">
+  <div class="wrap">
+    <p class="eyebrow reveal">OUR RESPONSE</p>
+    <h2 class="response-title reveal"><strong>한번 일어난 재난은,</strong><br><strong>회복까지 여러 번의 손길로 완성됩니다.</strong></h2>
+    <p class="response-sub reveal">소중한 후원금은 네팔 현장에서 깨끗한 물, 겨울나기 임시 거처, <br>일상의 회복까지 가장 필요한 곳에 전달됩니다.</p>
+
+    <div class="op-grid">
+      <div class="op-card reveal">
+        <p class="op-num">01</p>
+        <p class="op-title">청년대사</p>
+        <p class="op-sub">현장조사</p>
+        <p class="op-desc">청년 인력을 현지에 파견해 실태를 <br>직접 확인하고, 조사 결과를 콘텐츠화</p>
+      </div>
+      <div class="op-card reveal reveal-delay-1">
+        <p class="op-num">02</p>
+        <p class="op-title">자원동원</p>
+        <p class="op-sub">모금후원</p>
+        <p class="op-desc">대중과 기업을 대상으로 <br>모금을 통해 재원을 마련</p>
+      </div>
+      <div class="op-card reveal">
+        <p class="op-num">03</p>
+        <p class="op-title">컨테이너</p>
+        <p class="op-sub">현물기부</p>
+        <p class="op-desc">현장에 필요한 물품을 컨테이너 <br>단위로 확보해 현지에 발송</p>
+      </div>
+      <div class="op-card reveal reveal-delay-1">
+        <p class="op-num">04</p>
+        <p class="op-title">볼런투어</p>
+        <p class="op-sub">전문봉사</p>
+        <p class="op-desc">전문성을 갖춘 봉사 인력이 <br>여행 형태로 결합해 현지에서 직접 활동</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW TO HELP - donation ================= -->
+<section class="section-cream" id="donate">
+  <div class="wrap">
+    <p class="eyebrow reveal">HOW TO HELP</p>
+    <h2 class="h2 reveal">어떤 내일을<br>선물하시겠습니까?</h2>
+
+    <div class="grid-2">
+      <div class="give-card reveal">
+        <div class="give-emoji">🍚</div>
+        <p class="give-name">식량키트 지원</p>
+        <p class="give-price">30,000원</p>
+        <p class="give-desc">즉석 비상식량과 영유아 영양 치료식 제공</p>
+      </div>
+      <div class="give-card reveal reveal-delay-1">
+        <div class="give-emoji">💊</div>
+        <p class="give-name">의약물품 지원</p>
+        <p class="give-price">50,000원</p>
+        <p class="give-desc">정수 필터, 비누, 수액 세트</p>
+      </div>
+      <div class="give-card reveal">
+        <div class="give-emoji">🧣</div>
+        <p class="give-name">생활물품 지원</p>
+        <p class="give-price">100,000원</p>
+        <p class="give-desc">방한 담요, 아동 물품, 여성 위생 패드 키트</p>
+      </div>
+      <div class="give-card reveal reveal-delay-1">
+        <div class="give-emoji">🏠</div>
+        <p class="give-name">주거공간 지원</p>
+        <p class="give-price">300,000원</p>
+        <p class="give-desc">가옥 수리 도구, 아동 친화 보호 공간 조성</p>
+      </div>
+    </div>
+
+    <a href="https://online.mrm.or.kr/OoTNL97" target="_blank" rel="noopener" class="btn btn-red cream-cta">후원으로 선물하기</a>
+  </div>
+</section>
+
+<!-- ================= HOW TO HELP - volunteer ================= -->
+<section class="section-cream2">
+  <div class="wrap">
+    <p class="eyebrow reveal" style="color:var(--red);">HOW TO HELP</p>
+    <h2 class="h2 reveal" style="color:#161616;">현장 봉사단으로<br>함께하는 방법</h2>
+
+    <div class="grid-2">
+      <div class="vol-card reveal">
+        <div class="vol-emoji">🎨</div>
+        <p class="vol-name">재능기부</p>
+        <p class="vol-desc">교육, 문화예술 지원</p>
+      </div>
+      <div class="vol-card reveal reveal-delay-1">
+        <div class="vol-emoji">🩺</div>
+        <p class="vol-name">의료봉사</p>
+        <p class="vol-desc">양·한방 의약품 지원</p>
+      </div>
+      <div class="vol-card reveal">
+        <div class="vol-emoji">🏗️</div>
+        <p class="vol-name">복구작업</p>
+        <p class="vol-desc">마을, 건축 리모델링 지원</p>
+      </div>
+      <div class="vol-card reveal reveal-delay-1">
+        <div class="vol-emoji">📦</div>
+        <p class="vol-name">구호품 전달</p>
+        <p class="vol-desc">현장에 직접 구호물품 지원</p>
+      </div>
+    </div>
+
+    <div class="info-table reveal">
+      <div class="info-row">
+        <div class="info-label">활동기간</div>
+        <div class="info-value">추후 공지 (별도 안내 예정)</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">활동지역</div>
+        <div class="info-value">네팔 라수와 · 누와코트 · 다딩 · 고르카 · 타나훈 · 치트완 일대</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">활동내용</div>
+        <div class="info-value">구호물품 전달, 현장 복구, 의료·재능 봉사</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">활동특전</div>
+        <div class="info-value">봉사활동 확인서 및 활동 기록 제공</div>
+      </div>
+    </div>
+
+    <div class="check-box reveal">
+      <div class="check-line"><span class="check-mark">✔</span><span>해외 저개발 국가 지원에 관심 많으신 분</span></div>
+      <div class="check-line"><span class="check-mark">✔</span><span>공공여행으로 프로보노 민간 외교활동을 원하시는 분</span></div>
+      <p class="quota-line">모집정원: 30명 미만</p>
+      <p class="period-line">모집기간: 추후 공지 (별도 안내 예정)</p>
+    </div>
+
+    <a href="https://probono.campaignus.me/voluntour" target="_blank" rel="noopener" class="btn btn-red" style="margin-top:22px;">볼런투어로 참여하기</a>
+  </div>
+</section>
+
+<!-- ================= 50 COUNTRIES ================= -->
+<section class="section-map">
+  <div class="wrap">
+    <p class="map-tag reveal">50+ COUNTRIES</p>
+    <h2 class="map-title reveal">50개국 글로벌 맞춤형<br>지원과 일상 회복</h2>
+
+    <div class="grid-2">
+      <div class="country-card reveal">
+        <span class="country-num">01</span>
+        <p class="country-name">케냐</p>
+        <p class="country-desc">지역사회 특성을 반영한 회복 지원 시스템 구축</p>
+      </div>
+      <div class="country-card reveal reveal-delay-1">
+        <span class="country-num">02</span>
+        <p class="country-name">마다가스카르</p>
+        <p class="country-desc">현지 상황에 완벽히 맞춘 구호 물품 체계 운영</p>
+      </div>
+      <div class="country-card reveal">
+        <span class="country-num">03</span>
+        <p class="country-name">필리핀</p>
+        <p class="country-desc">식사·생활용품·치료 등 개인 단위 세밀한 필요 파악</p>
+      </div>
+      <div class="country-card reveal reveal-delay-1">
+        <span class="country-num">04</span>
+        <p class="country-name">우즈베키스탄</p>
+        <p class="country-desc">공공보건사업 추진</p>
+      </div>
+    </div>
+
+    <p class="map-closing reveal">그 외 50여 개국에<br>지원과 일상의 회복을 도왔습니다.</p>
+  </div>
+</section>
+
+<!-- ================= TOGETHER ================= -->
+<section class="section-navy3">
+  <div class="wrap">
+    <p class="since-label reveal">TOGETHER</p>
+    <h2 class="together-title reveal">재난은 한순간에 일어나지만,<br>회복은 오랜 시간이 필요합니다.</h2>
+
+    <div class="together-box reveal">
+      <p>지금 네팔의 누군가는 안전한 곳에서 밤을 보내기 위한 공간이 필요하고, 누군가는 한 끼의 식사를, 누군가는 치료를 기다리고 있습니다.</p>
+      <p>우리가 보내는 후원금 하나하나는 한 사람의 식사, 한 가족의 생활용품, 한 가정의 안전한 내일이 됩니다.</p>
+    </div>
+
+    <div class="final-cta-box reveal">
+      <p class="final-cta-line">작은 나눔도 모이면 큰 힘이 됩니다</p>
+      <a href="https://online.mrm.or.kr/OoTNL97" target="_blank" rel="noopener" class="btn btn-red">모두가 떠난 진흙더미 위, 네팔의 회복 함께하기</a>
+    </div>
+
+    <div class="donate-box reveal">
+      <p class="donate-title">네팔 긴급구호 후원하기</p>
+
+      <p class="method-title">방법 1. 계좌후원</p>
+      <p class="donate-line">후원계좌 │ <b>신한은행 140-009-442057</b></p>
+      <p class="donate-line">예금주 │ (사)프로보노국제협력재단</p>
+      <p class="donate-line">입금명 │ 이름_네팔</p>
+
+      <p class="method-title">방법 2. 홈페이지 지정후원</p>
+      <p class="donate-line">상단 후원하기 버튼 클릭 &gt; 지정후원</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DONATE INFO / CLOSING ================= -->
+<section class="section-navy4" id="donate-info">
+  <div class="wrap">
+    <div class="closing-quote reveal">
+      <p class="q">"재난을 넘어, 다시 일상으로."</p>
+      <p class="d">네팔의 오늘을 지키고 내일의 희망을 이어가는 일에<br>여러분의 따뜻한 마음을 보태주세요.</p>
+    </div>
+
+    <p class="brand-mark reveal">Probono International Cooperation Organization</p>
+  </div>
+</section>
+
+<script>
+  // Scroll reveal
+  (function(){
+    var items = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      items.forEach(function(el){ el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(function(el){ io.observe(el); });
+  })();
+
+  // Smooth anchor scroll fallback for older browsers
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href').slice(1);
+      var target = document.getElementById(id);
+      if(target){
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
